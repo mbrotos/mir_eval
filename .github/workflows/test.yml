@@ -1,12 +1,10 @@
 name: Test Python code
 
 on:
-  pull_request:
-    branches:
-      - master
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+  release:
+    types:
+      - test
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
